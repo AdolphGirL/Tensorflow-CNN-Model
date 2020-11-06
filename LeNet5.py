@@ -73,7 +73,8 @@ for i in range(50):
     ax.imshow(x_test[i, :].reshape((28, 28)),
               cmap=plt.cm.gray_r, interpolation='nearest')
 
-    if prediction_values[i] == np.argmax(y_test[i], axis=0):
+    # y_test[i] shape = (10, )，即為一個向量，非一為矩陣
+    if prediction_values[i] == np.argmax(y_test[i]):
         ax.text(0, 7, prediction_values[i], color='blue')
     else:
         ax.text(0, 7, prediction_values[i], color='red')
