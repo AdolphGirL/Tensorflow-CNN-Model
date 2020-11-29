@@ -123,6 +123,5 @@ class AlexNet(Sequential):
         # 全連接-8 1000個神經元，激活函數softmax
         self.add(Dense(nb_classes, activation='softmax'))
 
-
         # compile
         self.compile(optimizer='sgd', loss=sparse_categorical_crossentropy, metrics=['accuracy'])
